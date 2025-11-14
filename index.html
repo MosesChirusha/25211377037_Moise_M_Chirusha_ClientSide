@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="User registration form with real-time validation">
+    <title>Registration Form - Validation Demo</title>
+    <link rel="stylesheet" href="styles/main.css">
+</head>
+<body>
+    <!-- Main container -->
+    <main class="registration">
+        <div class="registration__container">
+            <!-- Header -->
+            <header class="registration__header">
+                <h1 class="registration__title">Create Account</h1>
+                <p class="registration__subtitle">Fill in your details to register</p>
+            </header>
+
+            <!-- Success message (hidden by default) -->
+           <div class="registration__success registration__success--hidden" id="successMessage">
+                <svg class="registration__success-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                    <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                </svg>
+                <div class="registration__success-content">
+                    <h3 class="registration__success-title">Registration Successful!</h3>
+                    <p class="registration__success-text">Your account has been created successfully.</p>
+                    <button type="button" class="registration__success-btn" id="resetBtn">
+                        Register another account
+                    </button>
+                </div>
+            </div>
+
+            <!-- Registration form -->
+            <div class="form">
+                <!-- Name field -->
+                <div class="form__group">
+                    <label for="name" class="form__label">
+                        Full Name <span class="form__required">*</span>
+                    </label>
+                    <input 
+                        type="text" 
+                        id="name" 
+                        name="name" 
+                        class="form__input" 
+                        placeholder="Moise Chirusha"
+                        aria-describedby="name-error"
+                        aria-invalid="false"
+                    >
+                    <div class="form__validation" id="name-error" hidden></div>
+                </div>
+
+                <!-- Email field -->
+                <div class="form__group">
+                    <label for="email" class="form__label">
+                        Email Address <span class="form__required">*</span>
+                    </label>
+                    <input 
+                        type="email" 
+                        id="email" 
+                        name="email" 
+                        class="form__input" 
+                        placeholder="moisechirusha@example.com"
+                        aria-describedby="email-error"
+                        aria-invalid="false"
+                    >
+                    <div class="form__validation" id="email-error" hidden></div>
+                </div>
+
+                <!-- Password field -->
+                <div class="form__group">
+                    <label for="password" class="form__label">
+                        Password <span class="form__required">*</span>
+                    </label>
+                    <div class="form__input-wrapper">
+                        <input 
+                            type="password" 
+                            id="password" 
+                            name="password" 
+                            class="form__input form__input--password" 
+                            placeholder="••••••••"
+                            aria-describedby="password-error password-requirements"
+                            aria-invalid="false"
+                        >
+                        <button type="button" class="form__toggle-password" id="togglePassword" aria-label="Toggle password visibility">
+                            <svg class="form__icon form__icon--eye" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+                                <circle cx="12" cy="12" r="3"></circle>
+                            </svg>
+                            <svg class="form__icon form__icon--eye-off" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" hidden>
+                                <path d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19m-6.72-1.07a3 3 0 1 1-4.24-4.24"></path>
+                                <line x1="1" y1="1" x2="23" y2="23"></line>
+                            </svg>
+                        </button>
+                    </div>
+                    <div class="form__hint" id="password-requirements">
+                        Must contain: 8+ characters, uppercase, lowercase, number, special character
+                    </div>
+                    <div class="form__validation" id="password-error" hidden></div>
+                </div>
+
+                <!-- Phone field -->
+                <div class="form__group">
+                    <label for="phone" class="form__label">
+                        Phone Number <span class="form__required">*</span>
+                    </label>
+                    <input 
+                        type="tel" 
+                        id="phone" 
+                        name="phone" 
+                        class="form__input" 
+                        placeholder="0997720050"
+                        aria-describedby="phone-error"
+                        aria-invalid="false"
+                    >
+                    <div class="form__validation" id="phone-error" hidden></div>
+                </div>
+
+                <!-- Submit button -->
+                <button type="button" class="form__submit" id="submitBtn" disabled>
+                    Complete All Fields to Register
+                </button>
+            </div>
+
+            <!-- Footer -->
+            <footer class="registration__footer">
+                Already have an account? 
+                <a href="#" class="registration__link">Sign in</a>
+            </footer>
+        </div>
+    </main>
+
+    <script src="scripts/main.js"></script>
+</body>
+</html>
