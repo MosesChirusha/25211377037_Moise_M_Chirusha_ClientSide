@@ -77,7 +77,7 @@ Exercise3_Moise_M_Chirusha_25211377037/
 
 1. **Clone or download the project**
 ```bash
-   git clone <25211377037_Moise_M_Chirusha_ClientSide>
+   git clone https://github.com/MosesChirusha/25211377037_Moise_M_Chirusha_ClientSide.git
    cd Exercise3_Moise_M_Chirusha_25211377037
 ```
 
